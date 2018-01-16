@@ -53,10 +53,14 @@ if dein#load_state('/home/tiannian/.config/nvim/plugins')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/echodoc.vim')
     call dein#add('zchee/deoplete-docker')
+    call dein#add('racer-rust/vim-racer')
+    call dein#add('zchee/deoplete-jedi')
 
     " ----- 70-language -------
     call dein#add('leafgarland/typescript-vim')
-    call dein#add('zchee/deoplete-jedi')
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('cespare/vim-toml')
+
 
     " ----- 80-menu ------    
     call dein#add('Shougo/denite.nvim')

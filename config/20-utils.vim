@@ -4,7 +4,8 @@ let g:online_thesaurus_map_keys = 0
 
 " Yggdroot/indentLine
 let g:indentLine_color_term = 239
-let g:indentLine_char = '|'
+let g:indentLine_char = '▏'
+let g:indentLine_concealcursor = ''
 
 set noshowmode
 set relativenumber

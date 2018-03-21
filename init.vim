@@ -61,9 +61,9 @@ if dein#load_state('/home/tiannian/.config/nvim/plugins')
     call dein#add('rust-lang/rust.vim')
     call dein#add('cespare/vim-toml')
 
-
     " ----- 80-menu ------    
     call dein#add('Shougo/denite.nvim')
+    call dein#add('neoclide/denite-git')
 
     " Required:
     call dein#end()

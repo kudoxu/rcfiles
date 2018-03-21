@@ -19,5 +19,7 @@ inoremap <C-h> <LEFT>
 inoremap <C-j> <DOWN>
 inoremap <C-k> <UP>
 inoremap <C-l> <RIGHT>
-"
+
+" 调整剪贴板
+set clipboard+=unnamedplus
 

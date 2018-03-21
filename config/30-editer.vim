@@ -13,7 +13,7 @@ let g:NERDCommentEmptyLines = 1
 " enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'} 
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'} 
 let g:AutoPairsMapCh = 0
 
 let g:undotree_WindowLayout = 3

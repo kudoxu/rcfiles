@@ -1,89 +1,48 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+function! Tn_init(base_dir)
+    " set base_dir
+    let g:tn_base_dir=a:base_dir
 
-" Required:
-set runtimepath+=/home/tiannian/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
+    " close compatible
+    if &compatible
+        set nocompatible
+    endif
 
-" Required:
-if dein#load_state('/home/tiannian/.config/nvim/plugins')
-    call dein#begin('/home/tiannian/.config/nvim/plugins')
+    " add runtimepath
+    let &runtimepath=&runtimepath . "," . g:tn_base_dir . "/repos/github.com/Shougo/dein.vim"
 
-    " Let dein manage dein
-    " Required:
-    call dein#add('/home/tiannian/.config/nvim/plugins/repos/github.com/Shougo/dein.vim')
-   
-    call dein#add('Shougo/dein.vim')
-    " ----- 10-basic -------
-    call dein#add('Shougo/context_filetype.vim')
+    " set state
+    let g:tn_dein_state=dein#load_state(a:base_dir)
 
-    " ----- 20-utils -------
-    call dein#add('itchyny/vim-cursorword')
-    call dein#add('haya14busa/incsearch.vim')
-    call dein#add('Yggdroot/indentLine')
-    call dein#add('beloglazov/vim-online-thesaurus')
-    call dein#add('Shougo/vimproc.vim')
-    call dein#add('terryma/vim-expand-region')
-    " call dein#add('Shougo/vimshell.vim')
-    " call dein#add('vimwiki/vimwiki')
-    " ----- 30-editer------
-    call dein#add('lilydjwg/fcitx.vim')
-    call dein#add('scrooloose/nerdcommenter')
-    call dein#add('mbbill/undotree')
-    call dein#add('jiangmiao/auto-pairs')
-    call dein#add('jsfaint/gen_tags.vim')
-   
-    " ----- 40-theme ------
-    call dein#add('flazz/vim-colorschemes')
-    call dein#add('vim-airline/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
-    
-    " ----- 50-project ------
-    call dein#add('scrooloose/nerdtree')    
-    call dein#add('Xuyuanp/nerdtree-git-plugin')
-    call dein#add('airblade/vim-gitgutter')
-    call dein#add('tpope/vim-fugitive')
+    if g:tn_dein_state 
+        call dein#begin(a:base_dir)
+	call dein#add(a:base_dir . '/repos/github.com/Shougo/dein.vim')
+    endif
+endfunction
 
-    " ----- 60-autocomplete ------ 
-    call dein#add('Shougo/deoplete.nvim')
-    call dein#add('Shougo/neco-syntax')
-    call dein#add('Shougo/neco-vim')
-    call dein#add('Shougo/neosnippet.vim')
-    call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('Shougo/echodoc.vim')
-    call dein#add('zchee/deoplete-docker')
-    call dein#add('racer-rust/vim-racer')
-    call dein#add('zchee/deoplete-jedi')
+function! Tn_add(...)
+    if g:tn_dein_state
+        if len(a:000) == 1
+            call dein#add(a:000[0])
+        else
+            call dein#add(a:000[0],a:000[1])
+        endif
+    endif
+endfunction
 
-    " ----- 70-language -------
-    call dein#add('leafgarland/typescript-vim')
-    call dein#add('rust-lang/rust.vim')
-    call dein#add('cespare/vim-toml')
+function! Tn_end()
+    if g:tn_dein_state 
+        call dein#end()
+        call dein#save_state()
+    endif
+    filetype plugin indent on
+    syntax enable
+endfunction
 
-    " ----- 80-menu ------    
-    call dein#add('Shougo/denite.nvim')
-    call dein#add('neoclide/denite-git')
+call Tn_init("~/.config/nvim/plugins")
 
-    " Required:
-    call dein#end()
-    call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-" if dein#check_install()
-"  call dein#install()
-" endif
-
-"End dein Scripts-------------------------
-
-let g:tn_config_prefix='~/.config/nvim/config/'
-" execute 'source ' . tn_config_prefix . 'main.vim'
-for path in split( globpath(g:tn_config_prefix, '*.vim'), '\n')
-  execute 'source ' . path
+" Load config
+for path in split( globpath(g:tn_base_dir . '/../config', '*.vim'), '\n')
+    execute 'source ' . path
 endfor
- 
+
+call Tn_end()

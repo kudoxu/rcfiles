@@ -1,7 +1,6 @@
 filetype plugin on
 " 配置leader键
-" unmap '<C-a>'
-let g:mapleader = "\1"
+let g:mapleader = '<C-a>'
 
 " 开启行号
 set nu
@@ -23,3 +22,7 @@ inoremap <C-l> <RIGHT>
 " 调整剪贴板
 set clipboard+=unnamedplus
 
+" 文件类型
+call Tn_add('Shougo/context_filetype.vim')
+" 插件安装进度显示
+call Tn_add('wsdjeg/dein-ui.vim')

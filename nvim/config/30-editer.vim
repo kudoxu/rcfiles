@@ -1,7 +1,9 @@
-" lilydjwg/fcitx.vim
-let $fcitx_socket='/tmp/fcitx-socket-:0'
+" " lilydjwg/fcitx.vim
+" let $fcitx_socket='/tmp/fcitx-socket-:0'
 
-" scrooloose/nerdcommenter
+" 自动注释
+call Tn_add('scrooloose/nerdcommenter')
+let g:NERDCreateDefaultMappings = 0
 " add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " use compact syntax for prettified multi-line comments
@@ -13,26 +15,29 @@ let g:NERDCommentEmptyLines = 1
 " enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" noremap <leader>ec<CR> <plug>NERDCommenterToggle
+map <C-e>/ <plug>NERDCommenterComment
+map <C-e>? <plug>NERDCommenterUncomment
+
+call Tn_add('jiangmiao/auto-pairs')
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'} 
 let g:AutoPairsMapCh = 0
 
+call Tn_add('mbbill/undotree')
 let g:undotree_WindowLayout = 3
 let g:undotree_SetFocusWhenToggle = 1
 
-let g:NERDCreateDefaultMappings = 0
-
 " unmap <leader>cu
-nnoremap <C-e><C-t> :UndotreeToggle<CR>
-inoremap <C-e><C-t> <esc>:UndotreeToggle<CR>a
+nnoremap <C-e>u :UndotreeToggle<CR>
 
-map <C-e><C-s> <Plug>(expand_region_expand)
-map <C-e><C-d> <Plug>(expand_region_shrink)
+" 区域选择
+" [normal] + 扩展
+" [normal] _ 缩小
+call Tn_add('terryma/vim-expand-region')
 
-map <C-e><C-n> gu
-map <C-e><C-u> gU
+" nnoremap <C-e>+ <Plug>(expand_region_expand)
+" nnoremap <C-e>_ <Plug>(expand_region_shrink)
 
-map <C-e><C-v> <Plug>NERDCommenterToggle
-" inoremap <C-e><C-c> <ESC>:echom 'test'<CR>a
 
 
 

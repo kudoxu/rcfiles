@@ -16,6 +16,7 @@ call Tn_add('autozimu/LanguageClient-neovim', {'rev': 'next','build': 'bash inst
 set hidden
 
 let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>

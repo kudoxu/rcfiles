@@ -5,9 +5,11 @@
 " nnoremap <leader><C-d> :NERDTreeToggle<CR>
 
 " let NERDTreeQuitOnOpen = 1
+"
+Plug 'Shougo/defx.nvim'
 
-call Tn_add('airblade/vim-gitgutter')
-call Tn_add('tpope/vim-fugitive')
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 let g:gitgutter_map_keys = 0
 

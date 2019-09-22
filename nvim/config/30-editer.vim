@@ -2,7 +2,7 @@
 " let $fcitx_socket='/tmp/fcitx-socket-:0'
 
 " 自动注释
-call Tn_add('scrooloose/nerdcommenter')
+Plug 'scrooloose/nerdcommenter'
 let g:NERDCreateDefaultMappings = 0
 " add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -19,11 +19,11 @@ let g:NERDTrimTrailingWhitespace = 1
 map <C-e>/ <plug>NERDCommenterComment
 map <C-e>? <plug>NERDCommenterUncomment
 
-call Tn_add('jiangmiao/auto-pairs')
+Plug 'jiangmiao/auto-pairs'
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'} 
 let g:AutoPairsMapCh = 0
 
-call Tn_add('mbbill/undotree')
+Plug 'mbbill/undotree'
 let g:undotree_WindowLayout = 3
 let g:undotree_SetFocusWhenToggle = 1
 
@@ -33,7 +33,7 @@ nnoremap <C-e>u :UndotreeToggle<CR>
 " 区域选择
 " [normal] + 扩展
 " [normal] _ 缩小
-call Tn_add('terryma/vim-expand-region')
+Plug 'terryma/vim-expand-region'
 
 " nnoremap <C-e>+ <Plug>(expand_region_expand)
 " nnoremap <C-e>_ <Plug>(expand_region_shrink)

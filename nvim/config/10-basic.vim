@@ -23,6 +23,6 @@ inoremap <C-l> <RIGHT>
 set clipboard+=unnamedplus
 
 " 文件类型
-call Tn_add('Shougo/context_filetype.vim')
+Plug 'Shougo/context_filetype.vim'
 " 插件安装进度显示
-call Tn_add('wsdjeg/dein-ui.vim')
+" Plug 'wsdjeg/dein-ui.vim'

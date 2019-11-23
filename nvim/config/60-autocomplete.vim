@@ -18,8 +18,9 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'python': ['/home/tiannian/.local/bin/pyls'],
-    \ 'javascript': ['node', '/home/tiannian/.local/lib/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'javascript.jsx': ['node', '/home/tiannian/.local/lib/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'javascript': ['node', '/home/tiannian/.local/lib/yarn/bin/javascript-typescript-stdio'],
+    \ 'typescript': ['node', '/home/tiannian/.local/lib/yarn/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['node', '/home/tiannian/.local/lib/yarn/bin/language-server-stdio.js'],
     \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
     \ 'cpp': ['ccls', '--log-file=/tmp/cc.log'],
     \ 'cuda': ['ccls', '--log-file=/tmp/cc.log'],

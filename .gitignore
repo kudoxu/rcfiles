@@ -1,0 +1,4 @@
+plugins/
+vim/autoload/*
+vim/plugged/*
+**/.netrwhist
